@@ -72,6 +72,8 @@ exports.deleteBook = (req, res, next) => {
         });
  };
 
+//avnat implémentation multer et vérification user id
+
 // exports.createBook = (req, res, next) => {
 //     const bookObject = req.body;
 //     console.log(bookObject);
