@@ -1,6 +1,13 @@
 const Book = require('../models/Book');
 const fs = require('fs');
 
+exports.getBestRating = (req, res, next) => {
+    //renvoyer un tableau des 3 livres de la BdD ayant la meilleure
+    //note moyenne
+    Book.find().sort({averageRating: -1}).limit(3)
+    .then((books)=>res.status(200).json(books))
+    .catch((error)=>res.status(404).json({error}));
+};
 
 exports.createBook = (req, res, next) => {
     const bookObject = JSON.parse(req.body.book);
@@ -71,6 +78,18 @@ exports.deleteBook = (req, res, next) => {
             res.status(500).json({ error });
         });
  };
+
+
+
+
+
+// exports.createRating = (req, res, next) => {
+    // un utilisateur donne une note, on regadre si son id est deja lié a une note
+    //  note entre 0 et 5
+    // id et note ajouté au tableau rating (servira a comparer)
+    //pas possible de modifier une note
+    //tenir a jour la moyenne average rating
+// }
 
 //avnat implémentation multer et vérification user id
 
