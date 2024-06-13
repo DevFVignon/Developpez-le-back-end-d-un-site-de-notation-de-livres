@@ -35,15 +35,18 @@ module.exports.resizeImage = (req, res, next) => {
     //sharp pour redimensionner l'image qui est traité au niveau du path indiqué
     //puis on supprime le fichier qui était enr. avec storage pour le remplacer
     sharp(filePath)
-    .resize({width: 404, heigh: 510})
+    .resize({ width: 404, height: 510 })
     .toFile(outputFilePath)
-    .then(()=>{
-      fs.unlink(filePath, ()=>{
+    .then(() => {
+      fs.unlink(filePath, (err) => {
+        if (err) console.error(err);
         req.file.path = outputFilePath;
+        req.file.filename = `resized_${fileName}`;
         next();
-      })
+      });
     })
-    .catch((error)=>{console.log(error);
-      return next();
+    .catch((error) => {
+      console.error(error);
+      next();
     });
 };

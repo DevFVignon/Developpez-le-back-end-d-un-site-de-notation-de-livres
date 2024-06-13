@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bookRoutes = require('./routes/book');
 const userRoutes = require('./routes/user');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 require('dotenv').config();
 
@@ -32,6 +33,12 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
   next();
 });
+
+// Middleware pour parser les données JSON
+app.use(bodyParser.json());
+
+// Middleware pour parser les données URL-encoded
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/api/auth', userRoutes);
