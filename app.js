@@ -7,7 +7,6 @@ const bodyParser = require('body-parser');
 
 require('dotenv').config();
 
-
 const dbUser = process.env.DB_USER;
 const dbPassword = process.env.DB_PASSWORD;
 const dbCluster = process.env.DB_CLUSTER;
