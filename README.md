@@ -12,7 +12,7 @@ L'objectif principal de ce projet est de développer le back-end de cette applic
 
 Voici les spécifications techniques du projet :
 
-![Spécification techniques](./imagesreadme/tableaup1.png)
-![Spécification techniques](./imagesreadme/tableaup2.png)
-![Spécification techniques](./imagesreadme/tableaup3.png)
-![Spécification techniques](./imagesreadme/tableaup4.png)
+![Spécification techniques](./doc/images/tableaup1.png)
+![Spécification techniques](./doc/images/tableaup2.png)
+![Spécification techniques](./doc/images/tableaup3.png)
+![Spécification techniques](./doc/images/tableaup4.png)
