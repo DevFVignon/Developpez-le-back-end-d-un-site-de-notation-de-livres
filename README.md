@@ -16,3 +16,11 @@ Voici les spécifications techniques du projet :
 ![Spécification techniques](./doc/images/tableaup2.png)
 ![Spécification techniques](./doc/images/tableaup3.png)
 ![Spécification techniques](./doc/images/tableaup4.png)
+
+## Installation
+Pour installer les dépendances nécessaires, exécutez la commande suivante à la racine du dossier :
+```bash
+#pour installer les dépendances du fichier package.json
+npm install
+# puis pour lancer le serveur
+nodemon server
